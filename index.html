@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kodes Trading</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            Kodes<span>Trade</span>
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#markets">Markets</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#history">History</a>
+        </nav>
+
+        <div class="actions" id="authButtons">
+
+            <a href="login.html" class="login">
+                Log In
+            </a>
+
+            <a href="signup.html" class="signup">
+                Create Account
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main id="dashboard">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="label">TRADING PLATFORM</p>
+
+                <h1>
+                    Trade smarter.<br>
+                    <span>Build your future.</span>
+                </h1>
+
+                <p class="description">
+                    Monitor markets, manage your portfolio
+                    and trade from one powerful platform.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#markets" class="primary">
+                        Start Trading
+                    </a>
+
+                    <a href="#markets" class="secondary">
+                        Explore Markets
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <p>Total Balance</p>
+
+                <h2 id="balance">
+                    $10,000.00
+                </h2>
+
+                <span class="green">
+                    +2.84%
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <p>Available Funds</p>
+
+                <h2>
+                    $10,000.00
+                </h2>
+
+                <span>
+                    Available to trade
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <p>Portfolio Value</p>
+
+                <h2>
+                    $10,000.00
+                </h2>
+
+                <span class="green">
+                    +$284.00
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section id="markets" class="section">
+
+            <div class="section-title">
+
+                <div>
+                    <p class="label">MARKETS</p>
+
+                    <h2>
+                        Popular Markets
+                    </h2>
+                </div>
+
+                <button class="view">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="markets">
+
+
+                <div class="market-card">
+
+                    <div class="asset">
+
+                        <div class="coin btc">
+                            ₿
+                        </div>
+
+                        <div>
+                            <h3>Bitcoin</h3>
+                            <p>BTC / USD</p>
+                        </div>
+
+                    </div>
+
+                    <h2 id="btcPrice">
+                        $62,450.00
+                    </h2>
+
+                    <p class="green">
+                        +2.41%
+                    </p>
+
+                    <div class="chart">
+                        <div class="chart-line"></div>
+                    </div>
+
+                    <button
+                        class="trade"
+                        onclick="trade('Bitcoin')">
+
+                        Trade BTC
+
+                    </button>
+
+                </div>
+
+
+                <div class="market-card">
+
+                    <div class="asset">
+
+                        <div class="coin eth">
+                            Ξ
+                        </div>
+
+                        <div>
+                            <h3>Ethereum</h3>
+                            <p>ETH / USD</p>
+                        </div>
+
+                    </div>
+
+                    <h2 id="ethPrice">
+                        $2,450.00
+                    </h2>
+
+                    <p class="green">
+                        +1.82%
+                    </p>
+
+                    <div class="chart">
+                        <div class="chart-line"></div>
+                    </div>
+
+                    <button
+                        class="trade"
+                        onclick="trade('Ethereum')">
+
+                        Trade ETH
+
+                    </button>
+
+                </div>
+
+
+                <div class="market-card">
+
+                    <div class="asset">
+
+                        <div class="coin gold">
+                            Au
+                        </div>
+
+                        <div>
+                            <h3>Gold</h3>
+                            <p>XAU / USD</p>
+                        </div>
+
+                    </div>
+
+                    <h2 id="goldPrice">
+                        $2,650.00
+                    </h2>
+
+                    <p class="green">
+                        +0.74%
+                    </p>
+
+                    <div class="chart">
+                        <div class="chart-line"></div>
+                    </div>
+
+                    <button
+                        class="trade"
+                        onclick="trade('Gold')">
+
+                        Trade Gold
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="portfolio" class="section">
+
+            <p class="label">
+                PORTFOLIO
+            </p>
+
+            <h2>
+                Your Assets
+            </h2>
+
+            <div class="portfolio">
+
+                <div>
+                    <strong>Bitcoin</strong>
+                    <span>0.050 BTC</span>
+                    <b>$3,122.50</b>
+                </div>
+
+                <div>
+                    <strong>Ethereum</strong>
+                    <span>1.20 ETH</span>
+                    <b>$2,940.00</b>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="history" class="section">
+
+            <p class="label">
+                ACTIVITY
+            </p>
+
+            <h2>
+                Recent Transactions
+            </h2>
+
+            <div id="historyList" class="history">
+
+                <div>
+                    <strong>Account created</strong>
+                    <span>Completed</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">
+            Kodes<span>Trade</span>
+        </div>
+
+        <p>
+            © 2026 KodesTrade
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        const savedUser = localStorage.getItem("kodesUser");
+
+        if (savedUser) {
+
+            const user = JSON.parse(savedUser);
+
+            document.getElementById("authButtons").innerHTML = `
+                <span style="color:white; margin-right:15px;">
+                    Hi, ${user.name}
+                </span>
+
+                <button class="login" onclick="logout()">
+                    Log Out
+                </button>
+            `;
+        }
+
+
+        function logout() {
+
+            localStorage.removeItem("kodesUser");
+
+            window.location.reload();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

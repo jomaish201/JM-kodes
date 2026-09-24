@@ -1,0 +1,460 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b12;
+    color: white;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 72px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #0b111b;
+    border-bottom: 1px solid #1d2938;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #20d67b;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #8b97a9;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.login {
+    background: transparent;
+    color: white;
+    padding: 11px 18px;
+}
+
+.signup {
+    background: #20d67b;
+    color: #06110b;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        radial-gradient(
+            circle at 70% 30%,
+            #123d2c,
+            transparent 35%
+        ),
+        #070b12;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.label {
+    color: #20d67b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #20d67b;
+}
+
+.description {
+    color: #8995a8;
+    max-width: 550px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.primary {
+    background: #20d67b;
+    color: #06110b;
+    padding: 15px 25px;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.secondary {
+    background: #141d29;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 9px;
+}
+
+
+/* STATISTICS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    padding: 30px 6%;
+}
+
+.stat {
+    background: #0d141f;
+    border: 1px solid #1d2938;
+    border-radius: 14px;
+
+    padding: 25px;
+}
+
+.stat p {
+    color: #8995a8;
+    margin-bottom: 12px;
+}
+
+.stat h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.stat span {
+    color: #778398;
+}
+
+.green {
+    color: #20d67b !important;
+}
+
+
+/* SECTIONS */
+
+.section {
+    padding: 65px 6%;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: 28px;
+}
+
+.view {
+    background: #121b28;
+    color: white;
+    padding: 10px 17px;
+    border-radius: 7px;
+}
+
+
+/* MARKETS */
+
+.markets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.market-card {
+    background: #0d141f;
+
+    border: 1px solid #1d2938;
+
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+.asset {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.asset h3 {
+    font-size: 16px;
+}
+
+.asset p {
+    color: #778398;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.coin {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+.btc {
+    background: #3a2d16;
+    color: #f5a623;
+}
+
+.eth {
+    background: #20263d;
+    color: #8b9cff;
+}
+
+.gold {
+    background: #3a3216;
+    color: #f4d35e;
+}
+
+.market-card > h2 {
+    font-size: 27px;
+}
+
+.chart {
+    height: 90px;
+
+    margin: 20px 0;
+
+    background: #09101a;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.chart-line {
+    position: absolute;
+
+    width: 130%;
+    height: 100%;
+
+    border-bottom: 3px solid #20d67b;
+
+    transform: rotate(-5deg);
+
+    left: -20px;
+    top: 20px;
+}
+
+.trade {
+    width: 100%;
+
+    padding: 13px;
+
+    background: #15291f;
+
+    color: #20d67b;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.trade:hover {
+    background: #20d67b;
+    color: #06110b;
+}
+
+
+/* PORTFOLIO */
+
+.portfolio {
+    margin-top: 25px;
+
+    border: 1px solid #1d2938;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.portfolio div {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    padding: 20px;
+
+    background: #0d141f;
+
+    border-bottom: 1px solid #1d2938;
+}
+
+.portfolio span {
+    color: #8995a8;
+}
+
+.portfolio b {
+    text-align: right;
+}
+
+
+/* HISTORY */
+
+.history {
+    margin-top: 25px;
+
+    border: 1px solid #1d2938;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+.history div {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background: #0d141f;
+
+    border-bottom: 1px solid #1d2938;
+}
+
+.history span {
+    color: #20d67b;
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #1d2938;
+
+    padding: 40px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #778398;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .markets {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .actions .login {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .portfolio div {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .portfolio b {
+        text-align: left;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+```

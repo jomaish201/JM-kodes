@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KodesTrade - Log In</title>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #070b12;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-box {
+            width: 380px;
+            padding: 40px;
+            background: #101722;
+            border: 1px solid #1d2735;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .logo span {
+            color: #20d67b;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #9aa4b2;
+            margin-bottom: 30px;
+        }
+
+        .google-login {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 30px;
+            color: #20d67b;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="logo">
+            Kodes<span>Trade</span>
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="description">
+            Log in to your KodesTrade account.
+        </p>
+
+        <div id="g_id_onload"
+             data-client_id="483322290923-nqnl9f0g6lsjc2g6trg891it1ehtd72v.apps.googleusercontent.com"
+             data-callback="handleGoogleLogin"
+             data-auto_prompt="false">
+        </div>
+
+        <div class="google-login">
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-shape="rectangular">
+            </div>
+
+        </div>
+
+        <a href="kodes.html" class="back">
+            ← Back to KodesTrade
+        </a>
+
+    </div>
+
+
+    <script>
+
+        function handleGoogleLogin(response) {
+
+            try {
+
+                const token = response.credential;
+
+                const payload = token.split(".")[1];
+
+                const decoded = JSON.parse(
+                    atob(
+                        payload
+                            .replace(/-/g, "+")
+                            .replace(/_/g, "/")
+                    )
+                );
+
+                const user = {
+                    name: decoded.name,
+                    email: decoded.email,
+                    picture: decoded.picture
+                };
+
+                localStorage.setItem(
+                    "kodesUser",
+                    JSON.stringify(user)
+                );
+
+                console.log("KodesTrade login successful.");
+
+                window.location.href = "kodes.html";
+
+            } catch (error) {
+
+                console.error(
+                    "Google login error:",
+                    error
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
