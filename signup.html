@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - KodesTrade</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h1>Create Account</h1>
+        <p>Join KodesTrade</p>
+
+        <div id="g_id_onload"
+             data-client_id="483322290923-nqnl9f0g6lsjc2g6trg891it1ehtd72v.apps.googleusercontent.com"
+             data-callback="handleGoogleSignup">
+        </div>
+
+        <div class="g_id_signin"
+             data-type="standard"
+             data-size="large"
+             data-theme="outline"
+             data-text="signup_with">
+        </div>
+
+        <p>
+            Already have an account?
+            <a href="login.html">Log In</a>
+        </p>
+    </div>
+
+    <script>
+        function handleGoogleSignup(response) {
+            const payload = response.credential.split('.')[1];
+
+            const decoded = JSON.parse(
+                atob(payload.replace(/-/g, '+').replace(/_/g, '/'))
+            );
+
+            const user = {
+                name: decoded.name,
+                email: decoded.email,
+                picture: decoded.picture
+            };
+
+            localStorage.setItem("kodesUser", JSON.stringify(user));
+
+            window.location.href = "kodes.html";
+        }
+    </script>
+
+</body>
+</html>
