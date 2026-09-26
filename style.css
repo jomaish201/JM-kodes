@@ -1,4 +1,3 @@
-```css
 * {
     margin: 0;
     padding: 0;
@@ -13,10 +12,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #070b12;
     color: white;
+    padding-bottom: 0;
 }
 
-
-/* NAVBAR */
+/* =========================
+   DESKTOP NAVBAR
+========================= */
 
 .navbar {
     height: 72px;
@@ -43,18 +44,18 @@ body {
     color: #20d67b;
 }
 
-nav {
+.navbar nav {
     display: flex;
     gap: 30px;
 }
 
-nav a {
+.navbar nav a {
     color: #8b97a9;
     text-decoration: none;
     font-size: 14px;
 }
 
-nav a:hover {
+.navbar nav a:hover {
     color: white;
 }
 
@@ -82,8 +83,9 @@ button {
     font-weight: bold;
 }
 
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 500px;
@@ -152,15 +154,14 @@ button {
     border-radius: 9px;
 }
 
-
-/* STATISTICS */
+/* =========================
+   STATISTICS
+========================= */
 
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     gap: 18px;
-
     padding: 30px 6%;
 }
 
@@ -168,7 +169,6 @@ button {
     background: #0d141f;
     border: 1px solid #1d2938;
     border-radius: 14px;
-
     padding: 25px;
 }
 
@@ -190,8 +190,9 @@ button {
     color: #20d67b !important;
 }
 
-
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 .section {
     padding: 65px 6%;
@@ -201,7 +202,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     margin-bottom: 25px;
 }
 
@@ -216,8 +216,9 @@ button {
     border-radius: 7px;
 }
 
-
-/* MARKETS */
+/* =========================
+   MARKETS
+========================= */
 
 .markets {
     display: grid;
@@ -227,11 +228,8 @@ button {
 
 .market-card {
     background: #0d141f;
-
     border: 1px solid #1d2938;
-
     border-radius: 15px;
-
     padding: 25px;
 }
 
@@ -239,7 +237,6 @@ button {
     display: flex;
     align-items: center;
     gap: 13px;
-
     margin-bottom: 22px;
 }
 
@@ -262,7 +259,6 @@ button {
     justify-content: center;
 
     border-radius: 50%;
-
     font-weight: bold;
 }
 
@@ -287,43 +283,29 @@ button {
 
 .chart {
     height: 90px;
-
     margin: 20px 0;
-
     background: #09101a;
-
     border-radius: 8px;
-
     position: relative;
-
     overflow: hidden;
 }
 
 .chart-line {
     position: absolute;
-
     width: 130%;
     height: 100%;
-
     border-bottom: 3px solid #20d67b;
-
     transform: rotate(-5deg);
-
     left: -20px;
     top: 20px;
 }
 
 .trade {
     width: 100%;
-
     padding: 13px;
-
     background: #15291f;
-
     color: #20d67b;
-
     border-radius: 8px;
-
     font-weight: bold;
 }
 
@@ -332,29 +314,22 @@ button {
     color: #06110b;
 }
 
-
-/* PORTFOLIO */
+/* =========================
+   PORTFOLIO
+========================= */
 
 .portfolio {
     margin-top: 25px;
-
     border: 1px solid #1d2938;
-
     border-radius: 14px;
-
     overflow: hidden;
 }
 
 .portfolio div {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr 1fr;
-
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 20px;
-
     background: #0d141f;
-
     border-bottom: 1px solid #1d2938;
 }
 
@@ -366,28 +341,22 @@ button {
     text-align: right;
 }
 
-
-/* HISTORY */
+/* =========================
+   HISTORY
+========================= */
 
 .history {
     margin-top: 25px;
-
     border: 1px solid #1d2938;
-
     border-radius: 14px;
-
     overflow: hidden;
 }
 
 .history div {
     display: flex;
-
     justify-content: space-between;
-
     padding: 20px;
-
     background: #0d141f;
-
     border-bottom: 1px solid #1d2938;
 }
 
@@ -395,27 +364,33 @@ button {
     color: #20d67b;
 }
 
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid #1d2938;
-
     padding: 40px 6%;
-
     display: flex;
-
     justify-content: space-between;
-
     color: #778398;
 }
 
+/* =========================
+   MOBILE APP BOTTOM NAV
+========================= */
 
-/* MOBILE */
+.bottom-nav {
+    display: none;
+}
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
 
-    nav {
+    .navbar nav {
         display: none;
     }
 
@@ -426,10 +401,18 @@ footer {
     .stats {
         grid-template-columns: 1fr;
     }
-
 }
 
+/* =========================
+   PHONE
+========================= */
+
 @media (max-width: 600px) {
+
+    body {
+        padding-bottom: 75px;
+        overflow-x: hidden;
+    }
 
     .actions .login {
         display: none;
@@ -456,5 +439,61 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+
+    /* Bottom navigation */
+
+    .bottom-nav {
+        position: fixed;
+
+        display: flex;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 70px;
+
+        background: #0b111b;
+        border-top: 1px solid #1d2938;
+
+        justify-content: space-around;
+        align-items: center;
+
+        z-index: 9999;
+
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .nav-item {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 4px;
+
+        min-width: 65px;
+
+        color: #778398;
+
+        text-decoration: none;
+    }
+
+    .nav-item span {
+        font-size: 21px;
+    }
+
+    .nav-item small {
+        font-size: 11px;
+    }
+
+    .nav-item.active {
+        color: #20d67b;
+    }
+
+    .nav-item:hover {
+        color: #20d67b;
+    }
 }
-```
