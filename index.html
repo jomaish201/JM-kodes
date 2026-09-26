@@ -7,11 +7,24 @@
 
     <title>Kodes Trading</title>
 
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- App icon -->
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- TOP NAVIGATION -->
     <header class="navbar">
 
         <div class="logo">
@@ -40,8 +53,10 @@
     </header>
 
 
+    <!-- DASHBOARD -->
     <main id="dashboard">
 
+        <!-- HERO -->
         <section class="hero">
 
             <div class="hero-content">
@@ -60,7 +75,7 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#markets" class="primary">
+                    <a href="payment.html" class="primary">
                         Start Trading
                     </a>
 
@@ -75,10 +90,10 @@
         </section>
 
 
+        <!-- STATS -->
         <section class="stats">
 
             <div class="stat">
-
                 <p>Total Balance</p>
 
                 <h2 id="balance">
@@ -88,12 +103,10 @@
                 <span class="green">
                     +2.84%
                 </span>
-
             </div>
 
 
             <div class="stat">
-
                 <p>Available Funds</p>
 
                 <h2>
@@ -103,12 +116,10 @@
                 <span>
                     Available to trade
                 </span>
-
             </div>
 
 
             <div class="stat">
-
                 <p>Portfolio Value</p>
 
                 <h2>
@@ -118,12 +129,12 @@
                 <span class="green">
                     +$284.00
                 </span>
-
             </div>
 
         </section>
 
 
+        <!-- MARKETS -->
         <section id="markets" class="section">
 
             <div class="section-title">
@@ -145,7 +156,7 @@
 
             <div class="markets">
 
-
+                <!-- BITCOIN -->
                 <div class="market-card">
 
                     <div class="asset">
@@ -184,6 +195,7 @@
                 </div>
 
 
+                <!-- ETHEREUM -->
                 <div class="market-card">
 
                     <div class="asset">
@@ -222,6 +234,7 @@
                 </div>
 
 
+                <!-- GOLD -->
                 <div class="market-card">
 
                     <div class="asset">
@@ -264,6 +277,7 @@
         </section>
 
 
+        <!-- PORTFOLIO -->
         <section id="portfolio" class="section">
 
             <p class="label">
@@ -293,6 +307,7 @@
         </section>
 
 
+        <!-- HISTORY -->
         <section id="history" class="section">
 
             <p class="label">
@@ -317,6 +332,7 @@
     </main>
 
 
+    <!-- FOOTER -->
     <footer>
 
         <div class="logo">
@@ -330,9 +346,37 @@
     </footer>
 
 
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <a href="index.html" class="nav-item active">
+            <span>⌂</span>
+            <small>Home</small>
+        </a>
+
+        <a href="trading.html" class="nav-item">
+            <span>📊</span>
+            <small>Trade</small>
+        </a>
+
+        <a href="wallet.html" class="nav-item">
+            <span>💳</span>
+            <small>Wallet</small>
+        </a>
+
+        <a href="profile.html" class="nav-item">
+            <span>👤</span>
+            <small>Profile</small>
+        </a>
+
+    </nav>
+
+
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 
+    <!-- LOGIN STATE -->
     <script>
 
         const savedUser = localStorage.getItem("kodesUser");
@@ -342,13 +386,33 @@
             const user = JSON.parse(savedUser);
 
             document.getElementById("authButtons").innerHTML = `
-                <span style="color:white; margin-right:15px;">
+
+                <span style="
+                    color:white;
+                    margin-right:15px;
+                    font-weight:500;
+                ">
                     Hi, ${user.name}
                 </span>
 
-                <button class="login" onclick="logout()">
+                <a
+                    href="payment.html"
+                    class="login"
+                    style="
+                        text-decoration:none;
+                        margin-right:10px;
+                    "
+                >
+                    💳 Payment Method
+                </a>
+
+                <button
+                    class="login"
+                    onclick="logout()"
+                >
                     Log Out
                 </button>
+
             `;
         }
 
@@ -363,6 +427,17 @@
 
     </script>
 
-</body>
 
+    <!-- SERVICE WORKER -->
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker.register("./sw.js");
+
+        }
+
+    </script>
+
+</body>
 </html>
